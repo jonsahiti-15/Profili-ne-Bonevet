@@ -1,0 +1,432 @@
+
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jon Sahiti | Developer Profile</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080b0a;
+            color: #f1f5f2;
+            line-height: 1.7;
+        }
+
+        :root {
+            --green: #38d996;
+            --dark-green: #10251c;
+            --muted: #a2ada6;
+            --card: #101613;
+            --border: #25352c;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1050px;
+            margin: auto;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border);
+            padding: 20px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: var(--green);
+        }
+
+        nav a {
+            color: #d4ddd7;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: var(--green);
+        }
+
+        .hero {
+            padding: 100px 0 85px;
+            display: flex;
+            align-items: center;
+            gap: 55px;
+        }
+
+        .avatar {
+            min-width: 180px;
+            height: 180px;
+            border: 2px solid var(--green);
+            border-radius: 50%;
+            background: radial-gradient(circle, #1b4935, #101613 70%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 57px;
+            font-weight: bold;
+            color: var(--green);
+            box-shadow: 0 0 45px #38d99615;
+        }
+
+        .tag {
+            color: var(--green);
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: clamp(38px, 6vw, 64px);
+            line-height: 1.15;
+            margin: 12px 0;
+        }
+
+        h1 span {
+            color: var(--green);
+        }
+
+        .hero p {
+            color: var(--muted);
+            max-width: 570px;
+            margin: 15px 0 25px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 11px 22px;
+            background: var(--green);
+            color: #07130d;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+        }
+
+        .button:hover {
+            background: #79efbb;
+        }
+
+        section {
+            padding: 55px 0;
+        }
+
+        .section-title {
+            font-size: 29px;
+            margin-bottom: 25px;
+        }
+
+        .section-title span {
+            color: var(--green);
+        }
+
+        .about {
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .about p {
+            color: var(--muted);
+            max-width: 800px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill {
+            padding: 9px 17px;
+            background: var(--dark-green);
+            border: 1px solid #244a36;
+            color: #c6f8dc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .project {
+            padding: 24px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            transition: border-color 0.2s,
+                        transform 0.2s;
+        }
+
+        .project:hover {
+            border-color: var(--green);
+            transform: translateY(-4px);
+        }
+
+        .project-number {
+            color: var(--green);
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .project h3 {
+            margin: 12px 0;
+            font-size: 19px;
+        }
+
+        .project p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .project-type {
+            display: inline-block;
+            margin-top: 18px;
+            color: var(--green);
+            font-size: 12px;
+        }
+
+        .contact {
+            text-align: center;
+            background: #0d1510;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 45px 20px;
+        }
+
+        .contact p {
+            color: var(--muted);
+            margin: 12px 0 22px;
+        }
+
+        footer {
+            text-align: center;
+            color: #718078;
+            font-size: 13px;
+            padding: 28px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 50px;
+        }
+
+        @media (max-width: 750px) {
+            .hero {
+                flex-direction: column;
+                align-items: flex-start;
+                padding-top: 65px;
+                gap: 30px;
+            }
+
+            .avatar {
+                min-width: 130px;
+                height: 130px;
+                font-size: 42px;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 0 7px;
+            }
+
+            .section-title {
+                font-size: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Health Safety Brotherhood<span>.</span></div>
+
+                <div>
+                    <a href="#about">Rreth meje</a>
+                    <a href="#skills">Aftësitë</a>
+                    <a href="#projects">Projektet</a>
+                    <a href="#contact">Kontakti</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="hero">
+                <div class="avatar">HSB</div>
+
+                <div>
+                    <div class="tag">Developer • Founder</div>
+
+                    <h1>Jon <span>Sahiti.</span></h1>
+
+                    <p>
+                        Zhvillues aspirues i softuerit dhe themelues i HSB Tech.
+                        I përqendruar në krijimin e projekteve teknologjike,
+                        zgjidhjen e problemeve dhe zhvillimin e ideve në
+                        produkte digjitale.
+                    </p>
+
+                    <a href="#projects" class="button">
+                        Shiko projektet →
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <section class="about" id="about">
+            <div class="container">
+                <h2 class="section-title">
+                    Rreth <span>meje</span>
+                </h2>
+
+                <p>
+                    Jam i interesuar në programim, zhvillim të aplikacioneve
+                    dhe inteligjencë artificiale. Përmes projekteve praktike,
+                    synoj të fitoj përvojë, të përmirësoj aftësitë e mia dhe
+                    të ndërtoj zgjidhje që kanë vlerë për njerëzit dhe bizneset.
+                    Besoj në të mësuarit përmes praktikës, kreativitetit dhe
+                    këmbënguljes.
+                </p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <h2 class="section-title">
+                    Aftësitë <span>e mia</span>
+                </h2>
+
+                <div class="skills">
+                    <div class="skill">HTML</div>
+                    <div class="skill">CSS</div>
+                    <div class="skill">JavaScript</div>
+                    <div class="skill">Python</div>
+                    <div class="skill">Java</div>
+                    <div class="skill">C++</div>
+                    <div class="skill">SQL</div>
+                    <div class="skill">Arduino</div>
+                    <div class="skill">Web Development</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title">
+                    Projektet <span>e mia</span>
+                </h2>
+
+                <div class="projects">
+
+                    <article class="project">
+                        <div class="project-number">01 / BUSINESS</div>
+
+                        <h3>HSB Tech</h3>
+
+                        <p>
+                            Projekt teknologjik i fokusuar në zgjidhje
+                            digjitale për biznese, me ide për planifikimin
+                            e hapësirave dhe dizajnimin e mobilieve.
+                        </p>
+
+                        <div class="project-type">
+                            Web Development
+                        </div>
+                    </article>
+
+                    <article class="project">
+                        <div class="project-number">02 / EDUCATION</div>
+
+                        <h3>BIT Kosovo</h3>
+
+                        <p>
+                            Projekt për një zgjidhje rezervë offline,
+                            me synimin që shkolla të mund të përdorë
+                            sistemin edhe kur interneti nuk është i disponueshëm.
+                        </p>
+
+                        <div class="project-type">
+                            Offline System
+                        </div>
+                    </article>
+
+                    <article class="project">
+                        <div class="project-number">03 / HARDWARE</div>
+
+                        <h3>Arduino Solar Tracker</h3>
+
+                        <p>
+                            Projekt elektronik që përdor sensorë drite
+                            dhe një servo motor për të orientuar një
+                            panel drejt burimit të dritës.
+                        </p>
+
+                        <div class="project-type">
+                            Arduino • Electronics
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <div class="contact">
+                    <h2 class="section-title">
+                        Le të <span>lidheni</span>
+                    </h2>
+
+                    <p>
+                        Për bashkëpunime, projekte teknologjike
+                        dhe ide të reja.
+                    </p>
+
+                    <a href="mailto:your-email@example.com"
+                       class="button">
+                        Më kontakto
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            Jon Sahiti · Personal Developer Profile
+        </div>
+    </footer>
+
+</body>
+</html>
